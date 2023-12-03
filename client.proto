@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+
+package your_package;
+
+message Message {
+  string text = 1;
+}
+
+service YourService {
+  rpc SendMessage(Message) returns (google.protobuf.Empty);
+  rpc ReceiveMessage(google.protobuf.Empty) returns (Message);
+}
